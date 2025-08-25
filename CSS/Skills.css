@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Background */
+body {
+    min-height: 100vh;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #000000,#05272e , #00d5ff);
+
+}
+
+
+/* Main Box Styling */
+#main_box {
+    background: rgb(12, 20, 24);
+    border-radius: 18px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.14);
+    width: 1200px;
+    height: 550px;
+    padding: 36px 32px 48px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.3s;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 24px 24px rgb(0, 0, 0);
+
+}
+
+
+
+/* Navigation styles */
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+.logo a {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #f7d709;
+    letter-spacing: 1px;
+    font-family: 'cursive';
+    margin-right: 400px;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgb(0, 240, 248);
+
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.nav-links a {
+    text-decoration: none;
+    /* color: #374151; */
+    color: #08bbf1eb;
+    font-size: 1.3rem;
+    transition: color 0.18s;
+    padding: 4px 8px;
+    border-radius: 6px;
+    align-self: right;
+    box-shadow: 0 6px 6px rgb(0, 240, 248);
+
+}
+.nav-links a:hover {
+    background: #0e4c56;
+    color: #ffffff;
+}
+
+
+
+
+h1 {
+text-align: center;
+margin: 30px 100px 30px 100px;
+color: #00d5ff;
+width: 1000px;
+line-height: 50px;
+text-decoration: underline;}
+
+h2{
+    display: inline;
+    margin: 100px 100px 40px 250px;
+}
+
+
+.skills-container {
+max-width: 900px;
+width: 90%;
+background: #790707;
+padding: 32px;
+border-radius: 16px;
+box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
+
+
+.skills-category {
+margin: 10px 25px 10px 25px;
+padding: 10px 10px 10px 10px;
+}
+
+.skills-category h2 {
+font-size: 1.3rem;
+margin-bottom: 12px;
+color: #356a77;
+}
+
+.skills-list {
+display: inline;
+flex-wrap: wrap;
+gap: 10px;
+}
+
+.skill-badge {
+background: #07b8e0;
+color: #fff;
+padding: 8px 14px;
+border-radius: 20px;
+font-size: 0.9rem;
+font-weight: 500;
+box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+transition: transform 0.2s;
+}
+
+.skill-badge:hover {
+transform: scale(1.05);
+}

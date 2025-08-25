@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Background */
+body {
+    min-height: 100vh;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #000000,#05272e , #00d5ff);
+
+}
+
+/* Main Box Styling */
+#main_box {
+    background: rgb(12, 20, 24);
+    border-radius: 18px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.14);
+    width: 1200px;
+    height: 550px;
+    padding: 36px 32px 48px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.3s;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 24px 24px rgb(0, 0, 0);
+
+}
+
+
+
+/* Navigation styles */
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+.logo a {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #f7d709;
+    letter-spacing: 1px;
+    font-family: 'cursive';
+    margin-right: 400px; 
+    white-space: nowrap; /* ek hi line me rakhega */
+
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgb(0, 240, 248);
+
+
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.nav-links a {
+    text-decoration: none;
+    /* color: #374151; */
+    color: #08bbf1eb;
+    font-size: 1.3rem;
+    transition: color 0.18s;
+    padding: 4px 8px;
+    border-radius: 6px;
+    align-self: right;
+    box-shadow: 0 6px 6px rgb(0, 240, 248);
+    white-space: nowrap; /* ek hi line me rakhega */
+
+
+}
+.nav-links a:hover {
+    background: #0e4c56;
+    color: #ffffff;
+}
+
+/* Hero Section (centered text) */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 38px;
+    gap: 12px;
+}
+.content h1 {
+    font-size: 2rem;
+    color: #08bbf1eb;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.25;
+    letter-spacing: 1.5px;
+}
+
+.content h2 {
+    font-size: 1.3rem;
+    color: #087b9feb;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.25;
+    letter-spacing: 1.5px;
+}
+
+.image {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff; /* halka light blue background */
+    box-shadow: 0 6px 18px rgb(0, 240, 248);
+    margin: 24px auto;
+  }
+  
+  .image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 75%;
+    object-fit: cover;
+    border: 2px solid #ffffff;
+  }
+  
+
+/* Footer ke andar social media icons container */
+.Social-media {
+    display: flex;
+    justify-content: center;  /* Icons ko center me align kare */
+    gap: 20px;                /* Icons ke beech space */
+    padding: 20px 0;
+    background-color: rgb(12, 20, 24);   /* Footer ka halka dark background */
+  }
+  
+  /* Social media icons ke images styling */
+  .Social-media a img {
+    width: 35px;              /* Icon size adjust karo */
+    height: 35px;
+    object-fit: contain;
+    filter: brightness(0) invert(1); /* Agar icons dark background me light chahiye to */
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+
+  }
+  
+  /* Hover effect */
+  .Social-media a:hover img {
+    transform: scale(1.2);
+    filter: brightness(1) invert(0); /* Hover me thoda bright aur original color */
+    box-shadow: 0 24px 24px rgb(0, 0, 0);
+
+  }
+  
+
+/* Responsive */
+@media (max-width: 600px) {
+    #main_box {
+        width: 92%;
+        padding: 18px 4vw 28px 4vw;
+    }
+    nav {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
