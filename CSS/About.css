@@ -12,27 +12,31 @@ body {
     justify-content: center;
     align-items: center;
     background: linear-gradient(to bottom, #000000,#05272e , #00d5ff);
-
 }
 
 /* Main Box Styling */
 #main_box {
     background: rgb(12, 20, 24);
     border-radius: 18px;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.14);
-    width: 1200px;
-    height: 550px;
-    padding: 36px 32px 48px 32px;
+    box-shadow: 0 24px 24px rgb(0, 0, 0);
+    width: min(95%, 1200px);   /* max 1200px, but shrink on small devices */
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     transition: box-shadow 0.3s;
     position: relative;
     z-index: 1;
-    box-shadow: 0 24px 24px rgb(0, 0, 0);
+    background: transparent; /* ya jo bhi background tu chahta hai */
 
 }
 
+header {
+    width: 100%;
+    background: transparent; /* ya jo bhi background tu chahta hai */
+    padding: 10px 35px 10px 35px;   /* top-bottom ↑ left-right → */
+    box-sizing: border-box;
+  }
 
 
 /* Navigation styles */
@@ -41,59 +45,140 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 28px;
+    flex-wrap: wrap;  /* break into new line if not fitting */
+    gap: 1rem;
+    /* margin-bottom: 28px; */
+    min-height: 15%;
 }
+
 .logo a {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 4vw, 2.2rem); /* responsive font */
     font-weight: bold;
     color: #f7d709;
     letter-spacing: 1px;
-    font-family: 'cursive';
-    margin-right: 400px; 
-    white-space: nowrap; /* ek hi line me rakhega */
-
+    font-family: cursive;
     text-decoration: none;
     box-shadow: 0 6px 18px rgb(0, 240, 248);
-
-
+    white-space: nowrap;
+    text-align: left;
+    margin-right: 50%;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 .nav-links a {
     text-decoration: none;
-    /* color: #374151; */
     color: #08bbf1eb;
-    font-size: 1.3rem;
+    font-size: clamp(1rem, 2vw, 1.3rem);
     transition: color 0.18s;
     padding: 4px 8px;
     border-radius: 6px;
-    align-self: right;
     box-shadow: 0 6px 6px rgb(0, 240, 248);
-    white-space: nowrap; /* ek hi line me rakhega */
-
-
+    white-space: nowrap;
 }
 .nav-links a:hover {
     background: #0e4c56;
     color: #ffffff;
 }
 
+/* Heading aur para bhi responsive */
 h1 {
     text-align: center;
-    margin: 50px 100px 30px 100px;
-    font-size: 3.5em;
+    /* margin: clamp(20px, 5vw, 50px) clamp(10px, 8vw, 100px) 30px; */
+    font-size: clamp(2rem, 5vw, 3.5rem);  /* 👈 responsive */
     color: #00d5ff;
     text-decoration: underline;
 }
 
-p{
+p {
     text-align: center;
     color: #25a2b5;
-    font-size: 1.4em;
-    margin-top: 50px;
+    font-size: clamp(1rem, 2vw, 1.4rem);  /* 👈 responsive */
+    margin-top: clamp(20px, 5vw, 15px);
+}
 
+
+.footer{
+    display: flex;
+}
+/* Resume link container */
+.resume {
+    margin: 20px auto;           /* center me spacing */
+    text-align: center;           /* text center */
+}
+
+/* Resume link styling */
+.resume a {
+    display: inline-block;        /* padding ke liye block level */
+    background-color: #08bbf1eb; /* light blue background */
+    color: #fff;                  /* text white */
+    font-size: clamp(1rem, 2vw, 1.2rem); /* responsive font */
+    font-weight: 600;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.resume a:hover {
+    background-color: #0e4c56;
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+}
+
+
+/* Footer ke andar social media icons container */
+.Social-media {
+    display: flex;
+    justify-content: center;  /* Icons ko center me align kare */
+    gap: 20px;                /* Icons ke beech space */
+    padding: 20px 20px 10px 20px;
+    background: transparent;  
+  }
+  
+  /* Social media icons ke images styling */
+  .Social-media a img {
+    width: 35px;              /* Icon size adjust karo */
+    height: 35px;
+    object-fit: contain;
+    filter: brightness(0) invert(1); /* Agar icons dark background me light chahiye to */
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+
+  }
+  
+  /* Hover effect */
+  .Social-media a:hover img {
+    transform: scale(1.2);
+    box-shadow: 0 24px 24px rgb(0, 0, 0);
+  }
+  
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    .nav-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    #main_box {
+        padding: 20px;
+    }
+    .content h1 { font-size: 1.4rem; }
+    .content h2 { font-size: 1rem; }
+    .image { width: 120px; height: 120px; }
 }

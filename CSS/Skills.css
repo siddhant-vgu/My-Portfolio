@@ -12,28 +12,31 @@ body {
     justify-content: center;
     align-items: center;
     background: linear-gradient(to bottom, #000000,#05272e , #00d5ff);
-
 }
-
 
 /* Main Box Styling */
 #main_box {
     background: rgb(12, 20, 24);
     border-radius: 18px;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.14);
-    width: 1200px;
-    height: 550px;
-    padding: 36px 32px 48px 32px;
+    box-shadow: 0 24px 24px rgb(0, 0, 0);
+    width: min(95%, 1200px);   /* max 1200px, but shrink on small devices */
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     transition: box-shadow 0.3s;
     position: relative;
     z-index: 1;
-    box-shadow: 0 24px 24px rgb(0, 0, 0);
+    background: transparent; /* ya jo bhi background tu chahta hai */
 
 }
 
+header {
+    width: 100%;
+    background: transparent; /* ya jo bhi background tu chahta hai */
+    padding: 10px 35px 10px 35px;   /* top-bottom ↑ left-right → */
+    box-sizing: border-box;
+  }
 
 
 /* Navigation styles */
@@ -42,43 +45,45 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 28px;
+    flex-wrap: wrap;  /* break into new line if not fitting */
+    gap: 1rem;
+    /* margin-bottom: 28px; */
+    min-height: 15%;
 }
+
 .logo a {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 4vw, 2.2rem); /* responsive font */
     font-weight: bold;
     color: #f7d709;
     letter-spacing: 1px;
-    font-family: 'cursive';
-    margin-right: 400px;
+    font-family: cursive;
     text-decoration: none;
     box-shadow: 0 6px 18px rgb(0, 240, 248);
-
+    white-space: nowrap;
+    text-align: left;
+    margin-right: 50%;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 .nav-links a {
     text-decoration: none;
-    /* color: #374151; */
     color: #08bbf1eb;
-    font-size: 1.3rem;
+    font-size: clamp(1rem, 2vw, 1.3rem);
     transition: color 0.18s;
     padding: 4px 8px;
     border-radius: 6px;
-    align-self: right;
     box-shadow: 0 6px 6px rgb(0, 240, 248);
-
+    white-space: nowrap;
 }
 .nav-links a:hover {
     background: #0e4c56;
     color: #ffffff;
 }
-
-
 
 
 h1 {
@@ -91,7 +96,7 @@ text-decoration: underline;}
 
 h2{
     display: inline;
-    margin: 100px 100px 40px 250px;
+    margin: 100px 100px 40px 200px;
 }
 
 
@@ -113,7 +118,7 @@ padding: 10px 10px 10px 10px;
 .skills-category h2 {
 font-size: 1.3rem;
 margin-bottom: 12px;
-color: #356a77;
+color: #ffffff;
 }
 
 .skills-list {
@@ -135,4 +140,26 @@ transition: transform 0.2s;
 
 .skill-badge:hover {
 transform: scale(1.05);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    .nav-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    #main_box {
+        padding: 20px;
+    }
+    .content h1 { font-size: 1.4rem; }
+    .content h2 { font-size: 1rem; }
+    .image { width: 120px; height: 120px; }
 }
